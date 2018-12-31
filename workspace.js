@@ -181,7 +181,7 @@ cpdefine("inline:com-chilipeppr-workspace-cnc-cam", ["chilipeppr_ready"], functi
                 // Callback after widget loaded into #myDivWidgetXbox
                 // Now use require.js to get reference to instantiated widget
                 cprequire(
-                  ["inline:xbox-instance"], // the id you gave your widget
+                  ["inline:com-chilipeppr-widget-xbox"], // the id you gave your widget
                   function(myObjWidgetXbox) {
                     // Callback that is passed reference to the newly loaded widget
                     console.log("Widget / Xbox just got loaded.", myObjWidgetXbox);

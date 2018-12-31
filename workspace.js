@@ -151,13 +151,13 @@ cpdefine("inline:com-chilipeppr-workspace-cnc-cam", ["chilipeppr_ready"], functi
             var that = this;
 
             chilipeppr.load(
-              "#myDivWidgetCam",
+              "#camera-instance",
               "http://raw.githubusercontent.com/jhapke/widget-cam/master/auto-generated-widget.html",
               function() {
                 // Callback after widget loaded into #myDivWidgetCam
                 // Now use require.js to get reference to instantiated widget
                 cprequire(
-                  ["inline:camera-instance"], // the id you gave your widget
+                  ["inline:com-chilipeppr-widget-cam"], // the id you gave your widget
                   function(myObjWidgetCam) {
                     // Callback that is passed reference to the newly loaded widget
                     console.log("Widget / Cam just got loaded.", myObjWidgetCam);

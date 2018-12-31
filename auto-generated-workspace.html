@@ -161,7 +161,10 @@ cpdefine("inline:com-chilipeppr-workspace-cnc-cam", ["chilipeppr_ready"], functi
                 setTimeout(function() { $(window).trigger('resize'); }, 100);
             });
             
+            this.loadXBOXWidget();
+            
             this.loadTemplateWidget();
+            this.loadCameraWidget();
             
             // Create our workspace upper right corner triangle menu
             this.loadWorkspaceMenu();
@@ -240,13 +243,13 @@ cpdefine("inline:com-chilipeppr-workspace-cnc-cam", ["chilipeppr_ready"], functi
             var that = this;
 
             chilipeppr.load(
-              "#myDivWidgetCam",
+              "#camera-instance",
               "http://raw.githubusercontent.com/jhapke/widget-cam/master/auto-generated-widget.html",
               function() {
                 // Callback after widget loaded into #myDivWidgetCam
                 // Now use require.js to get reference to instantiated widget
                 cprequire(
-                  ["inline:com-chilipeppr-widget-cam"], // the id you gave your widget
+                  ["inline:camera-instance"], // the id you gave your widget
                   function(myObjWidgetCam) {
                     // Callback that is passed reference to the newly loaded widget
                     console.log("Widget / Cam just got loaded.", myObjWidgetCam);
@@ -432,8 +435,8 @@ cpdefine("inline:com-chilipeppr-workspace-cnc-cam", ["chilipeppr_ready"], functi
                 </div>
 
                 <!-- Center Column -->
-                <div class="col-md-5 col-pad10" class="hidden">
-                    <div id="mywidget2-instance">
+                <div class="col-md-5 col-pad10">
+                    <div id="camera-instance">
                         <p class="sample" style="min-height:200px;">Widget 2 goes here</p>
                     </div>
                 </div>
